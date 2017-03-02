@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Rich Man's Reddit</title>
+</head>
+
+<body ng-app="redditMod" ng-controller="redCtrl">
+<h1>Rich Man's Reddit</h1>
+    <div ng-repeat="red in redCollection | limitTo: 10">
+        <img src=" {{ red.data.thumbnail }}" />
+
+        <p>Title: {{ red.data.title }}</p>
+        <p>Author: {{ red.data.author }}</p>
+        <p>Comments: {{ red.data.num_comments }}</p>
+    </div>
+
+
+
+
+
+
+
+    <ng-view></ng-view>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js "></script>
+    <script src="module.js "></script>
+    <script src="factory.js "></script>
+    <script src="redditCtrl.js "></script>
+</body>
+
+</html>
